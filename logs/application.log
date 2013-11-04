@@ -1,0 +1,289 @@
+2013-11-03 22:39:46,880 - [INFO] - from play in pool-4-thread-3 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2013-11-03 22:39:49,085 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6g6hknp3c - Internal server error, for (GET) [/as/174] ->
+
+play.api.PlayException: Cannot init the Global object[Global$ cannot be cast to play.api.GlobalSettings]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1.apply(Application.scala:55) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1.apply(Application.scala:49) ~[play_2.10.jar:2.2.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$class.play$api$WithDefaultGlobal$$globalInstance(Application.scala:48) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$globalInstance$lzycompute(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$globalInstance(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$class.global(Application.scala:64) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.global(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultConfiguration$class.play$api$WithDefaultConfiguration$$fullConfiguration(Application.scala:78) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultConfiguration$$fullConfiguration$lzycompute(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultConfiguration$$fullConfiguration(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultConfiguration$class.configuration(Application.scala:80) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.configuration(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.Application$class.$init$(Application.scala:272) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.<init>(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anon$1.<init>(ApplicationProvider.scala:126) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:126) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
+	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library-2.10.3.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: java.lang.ClassCastException: Global$ cannot be cast to play.api.GlobalSettings
+	at play.api.WithDefaultGlobal$class.play$api$WithDefaultGlobal$$scalaGlobal(Application.scala:35) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$scalaGlobal$lzycompute(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$scalaGlobal(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1$$anonfun$apply$5.apply(Application.scala:50) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1$$anonfun$apply$5.apply(Application.scala:50) ~[play_2.10.jar:2.2.1]
+	at scala.Option.getOrElse(Option.scala:120) ~[scala-library-2.10.3.jar:na]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1.apply(Application.scala:50) ~[play_2.10.jar:2.2.1]
+	... 30 common frames omitted
+
+2013-11-03 22:39:49,128 - [WARN] - from play in New I/O worker #1 
+No application found at invoker init
+
+2013-11-03 22:40:17,649 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6g6hknp3c - Internal server error, for (GET) [/as/174] ->
+
+play.api.PlayException: Cannot init the Global object[Global$ cannot be cast to play.api.GlobalSettings]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1.apply(Application.scala:55) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1.apply(Application.scala:49) ~[play_2.10.jar:2.2.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$class.play$api$WithDefaultGlobal$$globalInstance(Application.scala:48) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$globalInstance$lzycompute(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$globalInstance(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$class.global(Application.scala:64) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.global(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultConfiguration$class.play$api$WithDefaultConfiguration$$fullConfiguration(Application.scala:78) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultConfiguration$$fullConfiguration$lzycompute(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultConfiguration$$fullConfiguration(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultConfiguration$class.configuration(Application.scala:80) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.configuration(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.Application$class.$init$(Application.scala:272) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.<init>(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anon$1.<init>(ApplicationProvider.scala:126) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:126) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
+	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library-2.10.3.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: java.lang.ClassCastException: Global$ cannot be cast to play.api.GlobalSettings
+	at play.api.WithDefaultGlobal$class.play$api$WithDefaultGlobal$$scalaGlobal(Application.scala:35) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$scalaGlobal$lzycompute(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$scalaGlobal(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1$$anonfun$apply$5.apply(Application.scala:50) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1$$anonfun$apply$5.apply(Application.scala:50) ~[play_2.10.jar:2.2.1]
+	at scala.Option.getOrElse(Option.scala:120) ~[scala-library-2.10.3.jar:na]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1.apply(Application.scala:50) ~[play_2.10.jar:2.2.1]
+	... 30 common frames omitted
+
+2013-11-03 22:40:25,069 - [ERROR] - from application in New I/O worker #1 
+
+
+! @6g6hl009j - Internal server error, for (GET) [/as/174] ->
+
+play.api.PlayException: Cannot init the Global object[Global$ cannot be cast to play.api.GlobalSettings]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1.apply(Application.scala:55) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1.apply(Application.scala:49) ~[play_2.10.jar:2.2.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$class.play$api$WithDefaultGlobal$$globalInstance(Application.scala:48) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$globalInstance$lzycompute(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$globalInstance(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$class.global(Application.scala:64) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.global(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultConfiguration$class.play$api$WithDefaultConfiguration$$fullConfiguration(Application.scala:78) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultConfiguration$$fullConfiguration$lzycompute(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultConfiguration$$fullConfiguration(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultConfiguration$class.configuration(Application.scala:80) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.configuration(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.Application$class.$init$(Application.scala:272) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.<init>(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anon$1.<init>(ApplicationProvider.scala:126) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:126) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
+	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library-2.10.3.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: java.lang.ClassCastException: Global$ cannot be cast to play.api.GlobalSettings
+	at play.api.WithDefaultGlobal$class.play$api$WithDefaultGlobal$$scalaGlobal(Application.scala:35) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$scalaGlobal$lzycompute(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.play$api$WithDefaultGlobal$$scalaGlobal(Application.scala:399) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1$$anonfun$apply$5.apply(Application.scala:50) ~[play_2.10.jar:2.2.1]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1$$anonfun$apply$5.apply(Application.scala:50) ~[play_2.10.jar:2.2.1]
+	at scala.Option.getOrElse(Option.scala:120) ~[scala-library-2.10.3.jar:na]
+	at play.api.WithDefaultGlobal$$anonfun$play$api$WithDefaultGlobal$$globalInstance$1.apply(Application.scala:50) ~[play_2.10.jar:2.2.1]
+	... 30 common frames omitted
+
+2013-11-03 22:41:12,099 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2013-11-03 22:41:19,684 - [ERROR] - from application in play-akka.actor.default-dispatcher-5 
+
+
+! @6g6hl3347 - Internal server error, for (GET) [/as/174] ->
+
+play.api.Application$$anon$1: Execution exception[[NotSerializableException: io.wasted.util.Inet4Prefix]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10.jar:2.2.1]
+	at play.api.DefaultApplication.handleError(Application.scala:399) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$12$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:165) [play_2.10.jar:2.2.1]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$12$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:162) [play_2.10.jar:2.2.1]
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:33) [scala-library-2.10.3.jar:na]
+	at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:185) [scala-library-2.10.3.jar:na]
+	at scala.util.Try$.apply(Try.scala:161) [scala-library-2.10.3.jar:na]
+	at scala.util.Failure.recover(Try.scala:185) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) [play-iteratees_2.10.jar:2.2.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$2.execute(Execution.scala:70) [play-iteratees_2.10.jar:2.2.1]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.10.3.jar:na]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) [akka-actor_2.10.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) [akka-actor_2.10.jar:2.2.0]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.10.3.jar:na]
+Caused by: java.io.NotSerializableException: io.wasted.util.Inet4Prefix
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1183) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1547) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1508) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1431) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1177) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.writeArray(ObjectOutputStream.java:1377) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1173) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1547) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1508) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1431) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1177) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1547) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1508) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1431) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1177) ~[na:1.7.0_45]
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:347) ~[na:1.7.0_45]
+	at controllers.AutonomousSystemAPI$.cacheWrite(AutonomousSystemAPI.scala:50) ~[na:na]
+	at controllers.AutonomousSystemAPI$$anonfun$show$1.apply(AutonomousSystemAPI.scala:24) ~[na:na]
+	at controllers.AutonomousSystemAPI$$anonfun$show$1.apply(AutonomousSystemAPI.scala:22) ~[na:na]
+	at play.api.mvc.ActionBuilder$$anonfun$apply$11.apply(Action.scala:255) ~[play_2.10.jar:2.2.1]
+	at play.api.mvc.ActionBuilder$$anonfun$apply$11.apply(Action.scala:255) ~[play_2.10.jar:2.2.1]
+	at play.api.mvc.ActionBuilder$$anonfun$apply$10.apply(Action.scala:221) ~[play_2.10.jar:2.2.1]
+	at play.api.mvc.ActionBuilder$$anonfun$apply$10.apply(Action.scala:220) ~[play_2.10.jar:2.2.1]
+	at play.api.mvc.Action$.invokeBlock(Action.scala:357) ~[play_2.10.jar:2.2.1]
+	at play.api.mvc.ActionBuilder$$anon$1.apply(Action.scala:309) ~[play_2.10.jar:2.2.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:109) ~[play_2.10.jar:2.2.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:109) ~[play_2.10.jar:2.2.1]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:108) ~[play_2.10.jar:2.2.1]
+	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:107) ~[play_2.10.jar:2.2.1]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:107) ~[play_2.10.jar:2.2.1]
+	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:100) ~[play_2.10.jar:2.2.1]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:481) ~[play-iteratees_2.10.jar:2.2.1]
+	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:481) ~[play-iteratees_2.10.jar:2.2.1]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:517) ~[play-iteratees_2.10.jar:2.2.1]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:517) ~[play-iteratees_2.10.jar:2.2.1]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:493) ~[play-iteratees_2.10.jar:2.2.1]
+	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:493) ~[play-iteratees_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.10.3.jar:na]
+	... 6 common frames omitted
+
+2013-11-03 22:46:28,159 - [ERROR] - from application in New I/O worker #5 
+
+
+! @6g6hlkhci - Internal server error, for (GET) [/as/174] ->
+
+play.PlayExceptions$CompilationException: Compilation error[You do not have an implicit Application in scope. If you want to bring the current running Application into context, just add import play.api.Play.current]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library-2.10.3.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+
+2013-11-03 22:47:10,337 - [ERROR] - from application in New I/O worker #5 
+
+
+! @6g6hln1mo - Internal server error, for (GET) [/as/174] ->
+
+play.PlayExceptions$CompilationException: Compilation error[You do not have an implicit Application in scope. If you want to bring the current running Application into context, just add import play.api.Play.current]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library-2.10.3.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+
+2013-11-03 22:47:31,607 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2013-11-03 22:49:10,020 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
