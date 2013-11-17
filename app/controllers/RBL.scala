@@ -8,8 +8,11 @@ import com.joshrendek.scalabgp.AutonomousSystem
 import play.api.cache.Cached
 import play.api.Play.current
 import java.net.{UnknownHostException, InetAddress}
-import com.twitter.util.{Future, Promise}
-import scala.io.Source;
+import scala.concurrent.{future, blocking, Future, Await}
+import scala.concurrent.duration._
+import scala.io.Source
+import scala.concurrent._
+import ExecutionContext.Implicits.global
 
 object RBL extends Controller {
 
@@ -22,65 +25,57 @@ object RBL extends Controller {
     def ?[A](t: => A) = new IfTrue[A](b, t)
   }
 
+
   implicit def autoMakeIfTrue(b: => Boolean) = new MakeIfTrue(b)
 
   implicit val formats = Serialization.formats(NoTypeHints)
 
+  def list() = Action {
+    val rbl = Source.fromFile("conf/blacklists.txt").mkString.split("\n")
+    Ok(write(rbl))
+  }
+
   def lookup(ip: String) = Action {
-    val reverse_ip = ip.split("\\.").reverse.mkString(".")
-    val result = Source.fromFile("conf/blacklists.txt").mkString.split("\n").map {
-      bl =>
-        val tmp = Future(lookupIP(ip, bl) ++ lookupIP(reverse_ip, bl))
-        println("Looking up on: " + bl)
-        bl -> Map(
-          "blacklisted" -> ((tmp.get.size > 0) ? true | false),
-          "result" -> tmp
-        )
-    }
+    val result = rblCheck(ip, readRBL)
     Ok(write(result))
   }
 
-  def lookup2(ip: String) = Action {
+  //  http://localhost:9000/rbl/108.33.26.79/b.barracudacentral.org+bl.shlink.org
+  def lookup_rbls(ip: String, rbl_list: String) = Action {
+    val filtered_rbls = rbl_list.split("\\+")
+    val rbl = readRBL().filter(r => filtered_rbls.contains(r))
+    val result = rblCheck(ip, rbl)
+    Ok(write(result))
+  }
+
+  private def rblCheck(ip: String, rbl: Seq[String]) = {
     val reverse_ip = ip.split("\\.").reverse.mkString(".")
+    val rblFutures: Seq[Future[Map[String, Map[String, Any]]]] = rbl.map {
+      host =>
+        future {
+          blocking {
+            println("checking " + host)
+            val tmp = lookupIP(ip, host)
+            Map(host -> Map(
+              "blacklisted" -> ((tmp.size > 0) ? true | false),
+              "result" -> tmp
+            ))
+          }
+        }
+    }
+    val results: Future[Seq[Map[String, Map[String, Any]]]] = Future.sequence(rblFutures)
+    Await.result(results, 60 seconds)
+  }
 
-    val barracuda = lookupIP(ip, "b.barracudacentral.org")
-    val sorbs = lookupIP(ip, "dnsbl.sorbs.net")
-    val spamhaus = lookupIP(ip, "zen.spamhaus.org")
-    val psbl = lookupIP(ip, "psbl.surriel.com")
-    val inps = lookupIP(reverse_ip, "dnsbl.inps.de")
-
-
-
-    val hosts = Map(
-      "b.barracudacentral.org" -> Map(
-        "blacklisted" -> ((barracuda.size > 0) ? true | false),
-        "result" -> barracuda
-      ),
-      "dnsbl.sorbs.net" -> Map(
-        "blacklisted" -> ((sorbs.size > 0) ? true | false),
-        "result" -> sorbs
-      ),
-      "zen.spamhaus.org" -> Map(
-        "blacklisted" -> ((spamhaus.size > 0) ? true | false),
-        "result" -> spamhaus
-      ),
-      "psbl.surriel.com" -> Map(
-        "blacklisted" -> ((psbl.size > 0) ? true | false),
-        "result" -> psbl
-      ),
-      "dnsbl.inps.de" -> Map(
-        "blacklisted" -> ((inps.size > 0) ? true | false),
-        "result" -> inps
-      )
-    )
-    Ok(write(hosts))
+  private def readRBL() = {
+    Source.fromFile("conf/blacklists.txt").mkString.split("\n")
   }
 
   private def lookupIP(ip: String, bl: String) = {
     try {
-      InetAddress.getAllByName(ip + "." + bl).map(f => f.getHostAddress)
+      InetAddress.getAllByName(ip + "." + bl).map(f => f.getHostAddress).toSeq
     } catch {
-      case e: UnknownHostException => Array[InetAddress]()
+      case e: UnknownHostException => Seq[String]()
     }
   }
 

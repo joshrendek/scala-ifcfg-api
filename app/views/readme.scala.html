@@ -14,7 +14,7 @@
 
             <div class="page-header">
                 <h1>README</h1>
-                <p class="lead">All you need to know about <a href="http://icfg.net/">http://ifcfg.net/</a></p>
+                <p class="lead">All you need to know about <a href="http://ifcfg.net/">http://ifcfg.net/</a></p>
             </div>
 
             <h2>Why, Who, and Source</h2>
@@ -85,6 +85,80 @@
     {
         description: "FORTUNIX NETWORKS L.P.",
         subnet: "5.149.252.0/23"
+    }
+]
+</pre>
+            </div>
+
+            <h3>GET /rbl/list</h3>
+            Get a list of RBL's to check against.
+            <div>
+<pre>
+[
+    "access.redhawk.org",
+    "b.barracudacentral.org",
+    "bl.shlink.org",
+    "bl.spamcannibal.org",
+    "bl.spamcop.net"
+]
+</pre>
+            </div>
+
+            <h3>GET /rbl/:ip</h3>
+            Check :ip against all RBL's at /rbl/list. If the check takes longer than 60 seconds an error will be thrown.
+            <ul>
+                <li><b>:ip</b> - An IPv4 address to check</li>
+            </ul>
+            <div>
+<pre>
+[
+    {
+        access.redhawk.org: {
+            blacklisted: false,
+            result: [ ]
+        }
+    },
+    {
+        b.barracudacentral.org: {
+            blacklisted: true,
+            result: [
+                "127.0.0.2"
+            ]
+        }
+    },
+    {
+        bl.shlink.org: {
+            blacklisted: false,
+            result: [ ]
+        }
+    }
+]
+</pre>
+            </div>
+
+            <h3>GET /rbl/:ip/:rbl_list</h3>
+            Check :ip against a specific set of :rbl_list servers. If the check takes longer than 60 seconds an error will be thrown.
+            <ul>
+                <li><b>:rbl_list</b> - A + separated list of hosts, eg: b.barracudacentral.org+bl.shlink.org</li>
+            </ul>
+            <div>
+<pre>
+[
+    {
+        b.barracudacentral.org: {
+        blacklisted: true,
+        result: [
+            "127.0.0.2"
+        ]
+        }
+    },
+    {
+        bl.shlink.org: {
+        blacklisted: false,
+        result: [
+
+        ]
+        }
     }
 ]
 </pre>
