@@ -13,6 +13,7 @@ import scala.concurrent.duration._
 import scala.io.Source
 import scala.concurrent._
 import ExecutionContext.Implicits.global
+import play.Play
 
 object RBL extends Controller {
 
@@ -31,7 +32,7 @@ object RBL extends Controller {
   implicit val formats = Serialization.formats(NoTypeHints)
 
   def list() = Action {
-    val rbl = Source.fromFile("conf/blacklists.txt").mkString.split("\n")
+    val rbl = readRBL
     Ok(write(rbl))
   }
 
@@ -54,7 +55,6 @@ object RBL extends Controller {
       host =>
         future {
           blocking {
-            println("checking " + host)
             val tmp = lookupIP(ip, host)
             Map(host -> Map(
               "blacklisted" -> ((tmp.size > 0) ? true | false),
@@ -68,7 +68,8 @@ object RBL extends Controller {
   }
 
   private def readRBL() = {
-    Source.fromFile("conf/blacklists.txt").mkString.split("\n")
+    val path = Play.application().getFile("conf/blacklists.txt").toString
+    Source.fromFile(path).mkString.split("\n")
   }
 
   private def lookupIP(ip: String, bl: String) = {
