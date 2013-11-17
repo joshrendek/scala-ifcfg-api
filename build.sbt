@@ -13,7 +13,8 @@ libraryDependencies ++= Seq(
   anorm,
   cache,
   "com.joshrendek" %% "scala-bgp" % "0.0.2",
-  "io.wasted" %% "wasted-util" % "0.5.0-SNAPSHOT"
+  "io.wasted" %% "wasted-util" % "0.5.0-SNAPSHOT",
+  "com.twitter" %% "util-collection" % "6.3.6"
 )
 
 play.Project.playScalaSettings

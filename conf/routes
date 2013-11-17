@@ -6,6 +6,8 @@
 GET        /                             controllers.Application.index
 GET        /readme                       controllers.Application.readme
 
+GET        /rbl/:ip                      controllers.RBL.lookup(ip: String)
+
 GET        /as/:asnum                    controllers.AutonomousSystemAPI.show(asnum: String)
 GET        /as/:asnum/peer_list          controllers.AutonomousSystemAPI.peerList(asnum: String)
 GET        /as/:asnum/prefix_list        controllers.AutonomousSystemAPI.prefixList(asnum: String)
