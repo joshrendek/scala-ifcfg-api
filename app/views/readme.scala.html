@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bootstrap 101 Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+            <!-- Optional theme -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="page-header">
+                <h1>README</h1>
+                <p class="lead">All you need to know about <a href="http://icfg.net/">http://ifcfg.net/</a></p>
+            </div>
+
+            <h2>Why, Who, and Source</h2>
+            <p>
+                I wanted a simple to use API to get my current IP and other network information.
+                Other websites that used to offer this have become cluttered with ads or taking multiple seconds to respond.
+                I also wanted an excuse to make a small project to learn Scala and the Play! framework.
+            </p>
+
+            <p>My name is <a href="http://joshrendek.com/">Josh Rendek</a>.</p>
+            <p>The source is on github: <a href="https://github.com/joshrendek/scala-ifcfg-api">https://github.com/joshrendek/scala-ifcfg-api</a></p>
+
+
+            <hr>
+
+            <h2>API Endpoints</h2>
+
+            <h3>GET /</h3>
+            Hitting the root url will echo back your IP.
+            <div>
+                <h4>Response</h4>
+                <pre>11.22.33.44</pre>
+            </div>
+
+            <h3>GET /as/:num</h3>
+            Get information about a AS.
+            <div>
+                <h4>Response</h4>
+                <pre>
+{
+    "bgpPeerList":4158,
+    "as":174,
+    "asPathLength":3.64,
+    "ipsOriginated":27981312,
+    "countryOfOrigin":"United States",
+    "prefixList":2199
+}
+</pre>
+            </div>
+
+            <h3>GET /as/:num/peer_list</h3>
+            Get the list of peers for this AS.
+            <div>
+                <h4>Response</h4>
+                <pre>
+[
+    {
+        as: "AS3356",
+        name: "Level 3 Communications, Inc.",
+        ipv6: true,
+        rank: 1
+    }
+]
+</pre>
+            </div>
+
+            <h3>GET /as/:num/prefix_list</h3>
+            Get the list of prefixes contained within the AS.
+            <div>
+                <h4>Response</h4>
+                <pre>
+[
+    {
+        description: "Eurona-Brisknet Ltd",
+        subnet: "5.83.240.0/20"
+    },
+    {
+        description: "FORTUNIX NETWORKS L.P.",
+        subnet: "5.149.252.0/23"
+    }
+]
+</pre>
+            </div>
+
+        </div> <!-- /container -->
+    </body>
+</html>

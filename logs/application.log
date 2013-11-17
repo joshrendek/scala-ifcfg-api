@@ -68,3 +68,134 @@ play.PlayExceptions$CompilationException: Compilation error[value current is not
 2013-11-16 22:37:26,261 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
+2013-11-17 00:35:49,357 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:39:27,045 - [ERROR] - from application in New I/O worker #3 
+
+
+! @6ga8odhn2 - Internal server error, for (GET) [/readme] ->
+
+play.PlayExceptions$CompilationException: Compilation error[not found: value html]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library-2.10.3.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.1]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.1]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+
+2013-11-17 00:39:55,464 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:41:56,657 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:43:06,632 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:43:40,928 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:44:06,283 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:44:19,590 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:44:50,903 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:45:20,356 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:45:36,479 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:45:42,792 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:45:50,620 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:48:51,773 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:49:33,257 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:49:43,673 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:49:49,232 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:51:54,646 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:52:26,533 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:52:38,616 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:53:50,221 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:54:55,666 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:55:14,502 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:56:39,908 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:56:56,981 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:59:39,049 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 00:59:45,903 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 01:02:13,309 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 01:03:41,979 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 01:04:16,389 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 01:04:50,498 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 01:05:27,313 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 01:05:36,401 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 01:05:54,442 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 01:06:00,727 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-11-17 01:06:07,702 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+

@@ -4,6 +4,7 @@ import play.api._
 import play.api.mvc._
 import play.api.libs.json._
 import play.mvc.Http
+import views._
 
 
 object Application extends Controller {
@@ -17,4 +18,7 @@ object Application extends Controller {
       Ok(ipAddress);
   }
 
+  def readme() = Action {
+    Ok(html.readme())
+  }
 }

@@ -4,6 +4,7 @@
 
 # Home page
 GET        /                             controllers.Application.index
+GET        /readme                       controllers.Application.readme
 
 GET        /as/:asnum                    controllers.AutonomousSystemAPI.show(asnum: String)
 GET        /as/:asnum/peer_list          controllers.AutonomousSystemAPI.peerList(asnum: String)
