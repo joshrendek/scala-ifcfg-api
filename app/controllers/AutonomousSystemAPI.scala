@@ -38,7 +38,14 @@ object AutonomousSystemAPI extends Controller {
   def prefixList(asnum: String) = Cached("as:" + asnum + ":prefixList") {
     Action {
       val as = AutonomousSystem(asnum.toInt, None)
-      Ok(write(as.prefixList))
+      Ok(
+        write(
+          as.prefixList.map {
+            pl =>
+              Map("description" -> pl.description, "subnet" -> pl.subnet.toString)
+          }
+        )
+      )
     }
   }
 

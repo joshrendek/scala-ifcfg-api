@@ -12,7 +12,7 @@ libraryDependencies ++= Seq(
   jdbc,
   anorm,
   cache,
-  "com.joshrendek" %% "scala-bgp" % "0.0.1",
+  "com.joshrendek" %% "scala-bgp" % "0.0.2",
   "io.wasted" %% "wasted-util" % "0.5.0-SNAPSHOT"
 )
 
