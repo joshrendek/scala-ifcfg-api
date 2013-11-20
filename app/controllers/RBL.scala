@@ -14,6 +14,7 @@ import scala.io.Source
 import scala.concurrent._
 import ExecutionContext.Implicits.global
 import play.Play
+import lib.RequestHelper
 
 object RBL extends Controller {
 
@@ -47,6 +48,12 @@ object RBL extends Controller {
     val rbl = readRBL().filter(r => filtered_rbls.contains(r))
     val result = rblCheck(ip, rbl)
     Ok(write(result))
+  }
+
+  def lookup_current() = Action {
+    request =>
+      val result = rblCheck(RequestHelper.ipAddr(request), readRBL)
+      Ok(write(result))
   }
 
   private def rblCheck(ip: String, rbl: Seq[String]) = {

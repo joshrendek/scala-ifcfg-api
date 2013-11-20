@@ -110,10 +110,10 @@
 </pre>
             </div>
 
-            <h3>GET /rbl/:ip</h3>
+            <h3>GET /rbl/(:ip)</h3>
             Check :ip against all RBL's at /rbl/list. If the check takes longer than 60 seconds an error will be thrown.
             <ul>
-                <li><b>:ip</b> - An IPv4 address to check</li>
+                <li><b>:ip</b> - An IPv4 address to check (optional) - can be ommitted to check requesting IP</li>
             </ul>
             <div>
 <pre>

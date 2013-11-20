@@ -7,6 +7,7 @@ GET        /                             controllers.Application.index
 GET        /readme                       controllers.Application.readme
 
 GET        /rbl/list                     controllers.RBL.list
+GET        /rbl                          controllers.RBL.lookup_current
 GET        /rbl/:ip                      controllers.RBL.lookup(ip: String)
 GET        /rbl/:ip/:rbl_list            controllers.RBL.lookup_rbls(ip: String, rbl_list: String)
 
