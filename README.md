@@ -10,13 +10,6 @@ The source for this website is on github: https://github.com/joshrendek/scala-if
 
 The BGP Looking Glass scraper library I made is here: https://github.com/joshrendek/scala-bgp
 
-# TODO
-
-* Cleanup readme and api docs
-* Add traceroute tool
-* Add ping tool
-* Add whois tool
-
 # API Endpoints
 
 ## GET /
