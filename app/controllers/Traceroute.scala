@@ -38,12 +38,12 @@ object Traceroute extends Controller {
     println(ip)
     (Seq("traceroute", ip).mkString(" ").!!).split("\n").map {
       res =>
-        val tmp = res.replaceAll( """^\s+(?m)""", "").split(" ")
-        val thirdPacket = if (tmp.size >= 11) tmp(11).toDouble else 0
-        val secondPacket = if (tmp.size >= 8) tmp(8).toDouble else 0
-        TraceHost(tmp(0).toInt, tmp(2),
-          tmp(3).replace("(", "").replace(")", ""),
-          tmp(5).toDouble, secondPacket, thirdPacket)
+        res.replaceAll( """^\s+(?m)""", "")
+//        val thirdPacket = if (tmp.size >= 11) tmp(11).toDouble else 0
+//        val secondPacket = if (tmp.size >= 8) tmp(8).toDouble else 0
+//        TraceHost(tmp(0).toInt, tmp(2),
+//          tmp(3).replace("(", "").replace(")", ""),
+//          tmp(5).toDouble, secondPacket, thirdPacket)
     }
   }
 }
