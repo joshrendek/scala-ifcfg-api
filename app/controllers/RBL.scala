@@ -14,21 +14,9 @@ import scala.io.Source
 import scala.concurrent._
 import ExecutionContext.Implicits.global
 import play.Play
-import lib.RequestHelper
+import lib.{TernaryHelper, RequestHelper}
 
-object RBL extends Controller {
-
-  // defining a ternary operator: http://stackoverflow.com/questions/2705920/how-to-define-a-ternary-operator-in-scala-which-preserves-leading-tokens
-  class IfTrue[A](b: => Boolean, t: => A) {
-    def |(f: => A) = if (b) t else f
-  }
-
-  class MakeIfTrue(b: => Boolean) {
-    def ?[A](t: => A) = new IfTrue[A](b, t)
-  }
-
-
-  implicit def autoMakeIfTrue(b: => Boolean) = new MakeIfTrue(b)
+object RBL extends Controller with TernaryHelper {
 
   implicit val formats = Serialization.formats(NoTypeHints)
 
