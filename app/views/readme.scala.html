@@ -59,6 +59,40 @@
 </pre>
             </div>
 
+            <h3>GET /traceroute/(:ip)</h3>
+            Get a traceroute to the specified IP or yours if none is specified.
+            <ul>
+                <li><b>:ip</b> - An IPv4 address to traceroute (optional) - can be ommitted to check requesting IP</li>
+            </ul>
+            <div>
+                <h4>Response</h4>
+<pre>
+[
+    "1 ddwrt (192.168.5.1) 1.017 ms 0.835 ms 1.100 ms",
+    "2 192.168.2.1 (192.168.2.1) 1.107 ms 1.065 ms 1.122 ms",
+    "3 192.168.1.1 (192.168.1.1) 1.919 ms 2.766 ms 2.586 ms",
+    "4 l100.tampfl-vfttp-141.verizon-gni.net (96.254.154.1) 6.411 ms 5.284 ms 5.512 ms",
+    "5 g0-9-3-0.tampfl-lcr-22.verizon-gni.net (130.81.140.74) 7.440 ms 7.079 ms 6.693 ms",
+    "6 so-4-0-0-0.tpa01-bb-rtr2.verizon-gni.net (130.81.199.28) 6.718 ms",
+    "so-2-0-0-0.tpa01-bb-rtr2.verizon-gni.net (130.81.28.214) 7.739 ms 7.781 ms",
+    "7 0.xe-3-1-8.xt2.atl4.alter.net (152.63.7.113) 22.449 ms 23.830 ms 22.836 ms",
+    "8 tengige0-5-0-0.gw7.atl4.alter.net (152.63.86.182) 26.503 ms 28.483 ms 28.151 ms",
+    "9 teliasonera-gw.customer.alter.net (157.130.90.238) 26.332 ms 24.480 ms 25.656 ms",
+    "10 ash-bb4-link.telia.net (80.91.248.138) 42.026 ms",
+    "ash-bb4-link.telia.net (80.91.254.162) 38.856 ms",
+    "ash-bb3-link.telia.net (213.155.134.130) 41.103 ms",
+    "11 nyk-bb1-link.telia.net (213.155.134.148) 43.566 ms",
+    "nyk-bb1-link.telia.net (213.155.134.126) 46.472 ms",
+    "nyk-bb1-link.telia.net (213.155.131.238) 45.632 ms",
+    "12 nyk-b6-link.telia.net (213.155.130.241) 60.503 ms",
+    "nyk-b6-link.telia.net (80.91.253.93) 42.336 ms",
+    "nyk-b6-link.telia.net (213.155.130.241) 43.889 ms",
+    "13 digitalocean-ic-302450-nyk-b6.c.telia.net (62.115.34.14) 45.691 ms 45.846 ms 43.799 ms",
+    "14 app1.joshrendek.com (192.34.61.38) 43.997 ms 46.544 ms 48.838 ms"
+]
+</pre>
+                </div>
+
             <h3>GET /as/:num/peer_list</h3>
             Get the list of peers for this AS.
             <div>
