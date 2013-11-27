@@ -9,6 +9,10 @@ GET        /readme                       controllers.Application.readme
 GET        /traceroute                   controllers.Traceroute.traceroute
 GET        /traceroute/:ip               controllers.Traceroute.traceroute_ip(ip: String)
 
+GET        /ping                         controllers.Ping.ping
+GET        /ping/:ip                     controllers.Ping.ping_ip(ip: String)
+
+
 GET        /rbl/list                     controllers.RBL.list
 GET        /rbl                          controllers.RBL.lookup_current
 GET        /rbl/:ip                      controllers.RBL.lookup(ip: String)
