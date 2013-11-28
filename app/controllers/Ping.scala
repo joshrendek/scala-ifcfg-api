@@ -16,7 +16,8 @@ object Ping extends Controller with TernaryHelper {
   }
 
   def ping_ip(ip: String) = Action {
-    Ok("empty")
+    val ipAddr = InetAddress.getByName(ip).getHostAddress
+    Ok(write(net_ping(ipAddr)))
   }
 
   private def net_ping(ip: String) = {
