@@ -33,9 +33,10 @@ object Ping extends Controller with TernaryHelper {
   }
 
   private def net_ping(ip: String, count: Int) = {
-    (Seq("ping -c ", count, ip).mkString(" ").!!).split("\n").map {
+    val out = (Seq("ping -c ", count, ip).mkString(" ").!!).split("\n").map {
       res =>
         res.replaceAll( """^\s+(?m)""", "")
     }
+    out.slice(out.size - 2, out.size)
   }
 }
