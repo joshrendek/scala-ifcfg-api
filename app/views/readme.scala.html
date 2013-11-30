@@ -43,21 +43,6 @@
                 <pre>11.22.33.44</pre>
             </div>
 
-            <h3>GET /as/:num</h3>
-            Get information about a AS.
-            <div>
-                <h4>Response</h4>
-                <pre>
-{
-    "bgpPeerList":4158,
-    "as":174,
-    "asPathLength":3.64,
-    "ipsOriginated":27981312,
-    "countryOfOrigin":"United States",
-    "prefixList":2199
-}
-</pre>
-            </div>
 
             <h3>GET /ping/(:ip)</h3>
             Get ping statistics to the specified IP or yours if none is specified.
@@ -114,6 +99,22 @@
 ]
 </pre>
                 </div>
+
+            <h3>GET /as/:num</h3>
+            Get information about a AS.
+            <div>
+                <h4>Response</h4>
+                <pre>
+                    {
+                    "bgpPeerList":4158,
+                    "as":174,
+                    "asPathLength":3.64,
+                    "ipsOriginated":27981312,
+                    "countryOfOrigin":"United States",
+                    "prefixList":2199
+                    }
+                </pre>
+            </div>
 
             <h3>GET /as/:num/peer_list</h3>
             Get the list of peers for this AS.
