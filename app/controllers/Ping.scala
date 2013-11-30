@@ -37,6 +37,25 @@ object Ping extends Controller with TernaryHelper {
       res =>
         res.replaceAll( """^\s+(?m)""", "")
     }
-    out.slice(out.size - 2, out.size)
+    val parsed_out = out.slice(out.size - 2, out.size)
+    val trans = parsed_out(0).split(", ").map {
+      x => x.split(" ")(0)
+    }
+    val stats = parsed_out(1).split(" = ")(1).split(" ")(0).split("/")
+
+    //  [
+    //    "4 packets transmitted, 4 packets received, 0.0% packet loss",
+    //    "round-trip min/avg/max/stddev = 0.051/0.075/0.099/0.019 ms"
+    //  ]
+    println(trans)
+    Map(
+      "transmitted" -> trans(0).toInt,
+      "received" -> trans(1).toInt,
+      "packet_loss" -> ((trans(1) != trans(0)) ? (100 - (trans(1).toDouble / trans(0).toDouble)) | 0),
+      "min" -> stats(0).toDouble,
+      "avg" -> stats(1).toDouble,
+      "max" -> stats(2).toDouble,
+      "std_dev" -> stats(3).toDouble
+    )
   }
 }
