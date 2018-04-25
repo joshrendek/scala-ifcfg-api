@@ -1,3 +1,27 @@
+# PROJECT HAS MOVED
+
+https://github.com/joshrendek/ifcfg-api 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------
+
 # README
 All you need to know about http://ifcfg.net/
 
